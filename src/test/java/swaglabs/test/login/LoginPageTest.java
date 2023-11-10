@@ -30,7 +30,7 @@ class LoginPageTest extends BaseTest
 
     @Test
     @Override
-    public void authEmptyPasswordName() {
+    public void authEmptyPassword() {
         var username = ConfigProvider.STANDARD_USER_USERNAME;
         var password = "";
 
