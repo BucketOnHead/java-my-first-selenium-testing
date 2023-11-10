@@ -8,10 +8,10 @@ import java.util.Properties;
 @UtilityClass
 public class PropertiesProvider {
     public final Properties properties = readProperties();
-    public final String LOGIN_ERROR_MESSAGE = properties.getProperty("login.error.message.authentication.failed");
-    public final String USERNAME_REQUIRED_MESSAGE = properties.getProperty("login.error.message.username.required");
-    public final String PASSWORD_REQUIRED_MESSAGE = properties.getProperty("login.error.message.password.required");
-    public final String USER_LOCKED_MESSAGE = properties.getProperty("login.error.message.user.locked");
+    public final String LOGIN_ERROR_MSG = properties.getProperty("login.error.message.authentication.failed");
+    public final String USERNAME_REQUIRED_MSG = properties.getProperty("login.error.message.username.required");
+    public final String PASSWORD_REQUIRED_MSG = properties.getProperty("login.error.message.password.required");
+    public final String USER_LOCKED_MSG = properties.getProperty("login.error.message.user.locked");
 
     private Properties readProperties() {
         Properties props = new Properties();

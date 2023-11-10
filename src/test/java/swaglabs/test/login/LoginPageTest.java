@@ -25,7 +25,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed(), "Error message should be displayed");
-        assertEquals(PropertiesProvider.USERNAME_REQUIRED_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.USERNAME_REQUIRED_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -39,7 +39,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed(), "Error message should be displayed");
-        assertEquals(PropertiesProvider.PASSWORD_REQUIRED_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.PASSWORD_REQUIRED_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -53,7 +53,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed(), "Error message should be displayed");
-        assertEquals(PropertiesProvider.USERNAME_REQUIRED_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.USERNAME_REQUIRED_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -67,7 +67,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed(), "Error message should be displayed");
-        assertEquals(PropertiesProvider.LOGIN_ERROR_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.LOGIN_ERROR_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -81,7 +81,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed());
-        assertEquals(PropertiesProvider.LOGIN_ERROR_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.LOGIN_ERROR_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -95,7 +95,7 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed());
-        assertEquals(PropertiesProvider.LOGIN_ERROR_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.LOGIN_ERROR_MSG, loginPage.getErrorMessageText());
     }
 
     @Test
@@ -119,6 +119,6 @@ class LoginPageTest extends BaseTest
 
         assertFalse(passed, "Authorization should not be passed");
         assertTrue(loginPage.isErrorMessageDisplayed());
-        assertEquals(PropertiesProvider.USER_LOCKED_MESSAGE, loginPage.getErrorMessageText());
+        assertEquals(PropertiesProvider.USER_LOCKED_MSG, loginPage.getErrorMessageText());
     }
 }
