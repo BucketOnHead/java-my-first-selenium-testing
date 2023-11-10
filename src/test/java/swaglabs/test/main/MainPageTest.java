@@ -16,12 +16,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MainPageTest extends BaseTest
         implements SortProductTest {
 
+    private static final String username = ConfigProvider.STANDARD_USER_USERNAME;
+    private static final String password = ConfigProvider.STANDARD_USER_PASSWORD;
+
     @Test
     @Override
     public void sortNameAtoZ() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
-
         List<Item> products = new LoginPage()
                 .auth(username, password)
                 .selectProductSortByValue("az")
@@ -37,9 +37,6 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void sortNameZtoA() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
-
         List<Item> products = new LoginPage()
                 .auth(username, password)
                 .selectProductSortByValue("za")
@@ -55,9 +52,6 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void sortPriceLowToHigh() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
-
         List<Item> products = new LoginPage()
                 .auth(username, password)
                 .selectProductSortByValue("lohi")
@@ -73,9 +67,6 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void sortPriceHighToLow() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
-
         List<Item> products = new LoginPage()
                 .auth(username, password)
                 .selectProductSortByValue("hilo")

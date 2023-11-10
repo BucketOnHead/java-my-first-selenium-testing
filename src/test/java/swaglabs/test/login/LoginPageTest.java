@@ -14,11 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class LoginPageTest extends BaseTest
         implements AuthFormTest, StandardUserAuthTest, LockedUserAuthTest {
 
+    private static final String username = ConfigProvider.STANDARD_USER_USERNAME;
+    private static final String password = ConfigProvider.STANDARD_USER_PASSWORD;
+
     @Test
     @Override
     public void authEmptyUsername() {
         var username = "";
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
 
         var loginPage = new LoginPage();
         var passed = loginPage.tryAuth(username, password);
@@ -31,7 +33,6 @@ class LoginPageTest extends BaseTest
     @Test
     @Override
     public void authEmptyPassword() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
         var password = "";
 
         var loginPage = new LoginPage();
@@ -60,7 +61,6 @@ class LoginPageTest extends BaseTest
     @Override
     public void authStandardUserBadUsername() {
         var username = "bad_username";
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
 
         var loginPage = new LoginPage();
         var passed = loginPage.tryAuth(username, password);
@@ -73,7 +73,6 @@ class LoginPageTest extends BaseTest
     @Test
     @Override
     public void authStandardUserBadPassword() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
         var password = "bad_password";
 
         var loginPage = new LoginPage();
@@ -101,9 +100,6 @@ class LoginPageTest extends BaseTest
     @Test
     @Override
     public void authStandardUserSuccess() {
-        var username = ConfigProvider.STANDARD_USER_USERNAME;
-        var password = ConfigProvider.STANDARD_USER_PASSWORD;
-
         assertDoesNotThrow(() -> new LoginPage().auth(username, password),
                 "Authorization should be successful, but there was an error");
     }
