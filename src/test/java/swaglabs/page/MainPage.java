@@ -19,6 +19,15 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@class='inventory_list']")
     private WebElement productContainer;
 
+    @FindBy(id = "react-burger-menu-btn")
+    private WebElement leftMenuButton;
+
+    @FindBy(id = "about_sidebar_link")
+    private WebElement aboutButton;
+
+    @FindBy(id = "logout_sidebar_link")
+    private WebElement logoutButton;
+
     public MainPage() {
         driver.get(ConfigProvider.MAIN_URL);
         PageFactory.initElements(driver, this);
@@ -33,5 +42,19 @@ public class MainPage extends BasePage {
 
     public List<WebElement> getProducts() {
         return productContainer.findElements(By.xpath("//div[@class='inventory_item']"));
+    }
+
+    public AboutPage clickAboutButton() {
+        leftMenuButton.click();
+        aboutButton.click();
+
+        return new AboutPage();
+    }
+
+    public LoginPage clickLogoutButton() {
+        leftMenuButton.click();
+        logoutButton.click();
+
+        return new LoginPage();
     }
 }
