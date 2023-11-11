@@ -1,7 +1,7 @@
 package swaglabs.test.login.script;
 
 /**
- * Цель: проверка авторизации обычного пользователя
+ * Цель: проверить авторизацию обычного пользователя
  */
 public interface StandardUserAuthTest {
 

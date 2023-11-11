@@ -6,7 +6,7 @@ package swaglabs.test.main.script;
 public interface CartTest {
 
     /**
-     * Цель: проверить открытие страницы с корзиной
+     * Цель: проверить открытие корзины
      * <p>
      * Предусловия:
      * <ol>

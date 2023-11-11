@@ -1,7 +1,7 @@
 package swaglabs.test.login.script;
 
 /**
- * Цель: проверка формы входа
+ * Цель: проверить форму входа
  */
 public interface AuthFormTest {
 

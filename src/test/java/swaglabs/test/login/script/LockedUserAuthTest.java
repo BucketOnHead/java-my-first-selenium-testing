@@ -1,7 +1,7 @@
 package swaglabs.test.login.script;
 
 /**
- * Цель: проверка авторизации заблокированного пользователя
+ * Цель: проверить авторизацию заблокированного пользователя
  */
 public interface LockedUserAuthTest {
 
