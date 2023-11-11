@@ -3,17 +3,13 @@ package swaglabs.test.main;
 import com.google.common.collect.Comparators;
 import config.ConfigProvider;
 import core.BaseTest;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import swaglabs.entity.CartItem;
 import swaglabs.entity.Item;
 import swaglabs.page.LoginPage;
-import swaglabs.page.MainPage;
 import swaglabs.test.main.script.CartTest;
 import swaglabs.test.main.script.LeftMenuTest;
-import swaglabs.test.main.script.SortProductTest;
+import swaglabs.test.main.script.ProductSortTest;
 import utils.SimpleHolder;
 
 import java.util.ArrayList;
@@ -24,7 +20,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainPageTest extends BaseTest
-        implements SortProductTest, LeftMenuTest, CartTest {
+        implements ProductSortTest, LeftMenuTest, CartTest {
 
     private static final String username = ConfigProvider.STANDARD_USER_USERNAME;
     private static final String password = ConfigProvider.STANDARD_USER_PASSWORD;
@@ -81,7 +77,9 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void leftMenuAboutClick() {
-        new LoginPage().auth(username, password).clickAboutButton();
+        new LoginPage()
+                .auth(username, password)
+                .clickAboutButton();
 
         assertEquals(ConfigProvider.ABOUT_URL, driver.getCurrentUrl());
     }
@@ -89,7 +87,9 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void leftMenuLogoutClick() {
-        new LoginPage().auth(username, password).clickLogoutButton();
+        new LoginPage()
+                .auth(username, password)
+                .clickLogoutButton();
 
         assertEquals(ConfigProvider.LOGIN_URL, driver.getCurrentUrl());
     }
@@ -98,11 +98,9 @@ public class MainPageTest extends BaseTest
     @Test
     @Override
     public void leftMenuResetAppStateClick() {
-        var mainPage = new LoginPage().auth(username, password);
-        var products = mainPage.getProducts();
-
-        var cartItems = mainPage
-                .addProductByName(products.get(0).getName())
+        var cartItems = new LoginPage()
+                .auth(username, password)
+                .addProductByIdx(0)
                 .clickResetAppStateButton()
                 .clickCartButton()
                 .getCartItems();
