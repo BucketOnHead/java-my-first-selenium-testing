@@ -79,6 +79,7 @@ public class MainPageTest extends BaseTest
     public void leftMenuAboutClick() {
         new LoginPage()
                 .auth(username, password)
+                .clickLeftMenuButton()
                 .clickAboutButton();
 
         assertEquals(ConfigProvider.ABOUT_URL, driver.getCurrentUrl());
@@ -89,6 +90,7 @@ public class MainPageTest extends BaseTest
     public void leftMenuLogoutClick() {
         new LoginPage()
                 .auth(username, password)
+                .clickLeftMenuButton()
                 .clickLogoutButton();
 
         assertEquals(ConfigProvider.LOGIN_URL, driver.getCurrentUrl());
@@ -101,6 +103,7 @@ public class MainPageTest extends BaseTest
         var cartItems = new LoginPage()
                 .auth(username, password)
                 .addProductByIdx(0)
+                .clickLeftMenuButton()
                 .clickResetAppStateButton()
                 .clickCartButton()
                 .getCartItems();
@@ -186,6 +189,7 @@ public class MainPageTest extends BaseTest
                 .getProductByIdx(itemIdxs.get(2), item3)
                 .clickCartButton()
                 .getCartItems();
+
         var cartItem1 = cartItems.get(0);
         var cartItem2 = cartItems.get(1);
         var cartItem3 = cartItems.get(2);
@@ -206,11 +210,13 @@ public class MainPageTest extends BaseTest
                 .auth(username, password)
                 .addProductByIdx(itemIdx)
                 .getProductByIdx(itemIdx, item)
+                .clickLeftMenuButton()
                 .clickLogoutButton()
                 .auth(username, password)
                 .getCartBadgeValue(cartBadgeValueHolder)
                 .clickCartButton()
                 .getCartItems();
+
         var cartBadgeValue = cartBadgeValueHolder.getValue();
         var cartItem = cartItems.get(0);
 

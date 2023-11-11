@@ -86,24 +86,23 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage clickResetAppStateButton() {
+    public MainPage clickLeftMenuButton() {
         leftMenuButton.click();
-        resetAppStateButton.click();
+        return this;
+    }
 
+    public MainPage clickResetAppStateButton() {
+        resetAppStateButton.click();
         return this;
     }
 
     public AboutPage clickAboutButton() {
-        leftMenuButton.click();
         aboutButton.click();
-
         return new AboutPage();
     }
 
     public LoginPage clickLogoutButton() {
-        leftMenuButton.click();
         logoutButton.click();
-
         return new LoginPage();
     }
 
