@@ -7,12 +7,8 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Item {
+public class CartItem {
     String name;
     String description;
     String price;
-
-    public double getPriceAsDouble() {
-        return Double.parseDouble(price.replace("$", ""));
-    }
 }
